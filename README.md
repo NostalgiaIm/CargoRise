@@ -4,24 +4,30 @@
 ![Rust](https://img.shields.io/badge/backend-Rust-orange)
 ![Python](https://img.shields.io/badge/gui-Python%20%2B%20Tkinter-yellow)
 ![Portable](https://img.shields.io/badge/build-portable-brightgreen)
+![Release](https://img.shields.io/badge/release-v0.2.0-2ea44f)
 
-CargoRise 是一个 Windows 端 Rust 项目创建工具。它面向 RustRover、VS Code 和普通终端，目标很简单：在你写完 `main.rs` 之后，少切几次窗口，少输几次路径。
+中文说明: [README.zh-CN.md](README.zh-CN.md)
 
-当前版本：`v0.2.0`
+CargoRise is a lightweight Windows tool for creating new Rust projects and opening them in your IDE with less friction.
 
-## 特性
+It is designed for RustRover, VS Code, and terminal-first workflows. After you finish a `main.rs`, CargoRise helps you create the next project faster and with fewer window switches.
 
-- 终端直接输入 `cargorise-new` 快速创建项目
-- GUI 弹窗创建项目，并可在创建后直接打开 IDE 新窗口
-- 支持 RustRover 和 VS Code
-- 自动记住常用保存路径
-- 可从当前 `main.rs` 直接复制到新项目
-- 纯 Windows 可执行发布包，适合放进 PATH
+Current version: `v0.2.0`
 
-## 目录
+## Features
+
+- Fast terminal command for creating a Rust project
+- GUI window for project creation
+- Optional automatic IDE launch after creation
+- Support for RustRover and VS Code
+- Remembered save path for repeated use
+- Copy the current `main.rs` into the new project when needed
+- Portable Windows release that can be placed on `PATH`
+
+## Package Layout
 
 ```text
-CargoRise_Portable/
+CargoRise/
   CargoRise.py
   CargoRise.pyw
   CargoRise.vbs
@@ -36,107 +42,103 @@ CargoRise_Portable/
   install_windowsapps.cmd
   install_user_path.cmd
   install_powershell_profile.cmd
+  README.zh-CN.md
 ```
 
-## 使用方式
+## Quick Start
 
-### 1. 最快的终端方式
+### 1. Fastest terminal workflow
 
 ```powershell
 cargorise-new hello_world
 ```
 
-指定保存路径：
+Specify a save directory:
 
 ```powershell
-cargorise-new hello_world D:\RustProjects
+cargorise-new hello_world C:\Projects\Rust
 ```
 
-### 2. 打开已有项目
+### 2. Open an existing project
 
 ```powershell
-cargorise-open D:\RustProjects\hello_world
+cargorise-open C:\Projects\Rust\hello_world
 ```
 
-强制指定 IDE：
+Force a specific IDE:
 
 ```powershell
-cargorise-open D:\RustProjects\hello_world --ide vscode
-cargorise-open D:\RustProjects\hello_world --ide rustrover
+cargorise-open C:\Projects\Rust\hello_world --ide vscode
+cargorise-open C:\Projects\Rust\hello_world --ide rustrover
 ```
 
-### 3. 弹窗模式
+### 3. GUI mode
 
 ```powershell
 cargorise
 ```
 
-窗口里可以输入项目名、保存路径，并选择：
+The window lets you enter:
 
-- 是否创建后直接打开 IDE
-- IDE 类型：`auto` / `rustrover` / `vscode`
+- Project name
+- Save path
+- Whether to open the IDE after creation
+- IDE mode: `auto`, `rustrover`, or `vscode`
 
-## 安装
+## Installation
 
-推荐先运行：
+Recommended quick setup:
 
 ```powershell
 .\install_windowsapps.cmd
 ```
 
-如果你更想把命令放进自己的用户 PATH：
+If you prefer user PATH installation:
 
 ```powershell
 .\install_user_path.cmd
 ```
 
-如果你习惯 PowerShell：
+If you use a PowerShell profile:
 
 ```powershell
 .\install_powershell_profile.cmd
 ```
 
-安装后重启 RustRover 或 VS Code，再在新终端里测试：
+After installation, restart RustRover or VS Code, then test from a new terminal:
 
 ```powershell
 where.exe cargorise
 cargorise
 ```
 
-## 说明
+## Notes
 
-- `cargorise` 适合弹窗创建。
-- `cargorise-new` 适合最快创建。
-- `cargorise-open` 适合创建后立刻打开 IDE。
-- RustRover 和 VS Code 通常不需要额外 `.json` 配置。
-- 如果 IDE 没有被识别，请确认 `rustrover` 或 `code` 已经在 PATH 中。
+- `cargorise` is the GUI launcher.
+- `cargorise-new` is the fastest create command.
+- `cargorise-open` opens a project and can launch the IDE immediately.
+- RustRover and VS Code usually do not need extra `.json` files in each project.
+- If an IDE is not detected, make sure `rustrover` or `code` is available on `PATH`.
 
-## 运行前提
+## Requirements
 
 - Windows 10 / 11
 - Python 3
-- Rust 工具链可用时体验最好
+- Rust toolchain only if you want to rebuild from source
 
-## 注意事项
-
-- 改完 PATH 后，编辑器要完全退出再打开。
-- 在 PowerShell 里，`where.exe cargorise` 比 `where cargorise` 更可靠。
-- 如果你从某个项目目录里启动 `cargorise`，窗口会优先记住那个目录。
-- 当前版本以便携包为主，直接复制整个文件夹也能用。
-
-## 构建
+## Build From Source
 
 ```powershell
 .\build_all.cmd
 ```
 
-会重新生成：
+This rebuilds:
 
 ```text
 cargorise.exe
 cargo_rise_core.exe
 ```
 
-## 版本说明
+## Release Notes
 
-- `v0.2.0`：新增 `cargorise-open`，GUI 创建后可直接打开 IDE，新版后端改为快速骨架生成。
+- `v0.2.0`: Added `cargorise-open`, optional IDE launch after GUI creation, and a faster direct project skeleton generator.
