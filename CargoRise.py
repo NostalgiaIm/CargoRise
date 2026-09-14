@@ -12,6 +12,7 @@ from tkinter import filedialog, messagebox, ttk
 
 APP_NAME = "CargoRise"
 APP_DIR = Path(__file__).resolve().parent
+ICON_FILE = APP_DIR / "assets" / "CargoRise.ico"
 CONFIG_DIR = Path(os.environ.get("APPDATA", Path.home())) / APP_NAME
 CONFIG_FILE = CONFIG_DIR / "config.json"
 BACKEND_MANIFEST = APP_DIR / "backend" / "Cargo.toml"
@@ -129,6 +130,7 @@ class CargoRiseApp(tk.Tk):
         self.title(APP_NAME)
         self.geometry("620x300")
         self.minsize(560, 280)
+        self._set_window_icon()
 
         self.config_data = load_config()
         self.caller_dir = caller_dir
@@ -144,6 +146,16 @@ class CargoRiseApp(tk.Tk):
         self.open_path_button: Optional[ttk.Button] = None
 
         self._build_ui()
+
+    def _set_window_icon(self) -> None:
+        """加载项目图标，让窗口标题栏和任务栏使用 CargoRise 图标。"""
+        if not ICON_FILE.exists():
+            return
+        try:
+            self.iconbitmap(default=str(ICON_FILE))
+        except tk.TclError:
+            # 某些 Tk 环境不支持 ICO 时，仍然保留正常的窗口功能。
+            pass
 
     def _build_ui(self) -> None:
         """创建窗口中的输入框、按钮和状态提示。"""

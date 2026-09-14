@@ -1,24 +1,24 @@
-# CargoRise 安装说明
+# CargoRise Installation
 
-## 推荐顺序
+## Recommended Setup
 
-1. 打开 `CargoRise_Portable`
+1. Open the extracted CargoRise folder, for example `C:\Tools\CargoRise`.
 2. 运行：
 
 ```powershell
 .\install_windowsapps.cmd
 ```
 
-3. 关闭并重新打开 RustRover 或 VS Code
-4. 在新终端里输入：
+3. Restart RustRover or VS Code.
+4. Open a new terminal and run:
 
 ```powershell
 cargorise
 ```
 
-## 其他方式
+## Other Options
 
-### 用户 PATH
+### User PATH
 
 ```powershell
 .\install_user_path.cmd
@@ -30,38 +30,38 @@ cargorise
 .\install_powershell_profile.cmd
 ```
 
-## 常用命令
+## Common Commands
 
 ```powershell
 cargorise
 cargorise-new hello_world
-cargorise-open D:\RustProjects\hello_world
+cargorise-open C:\Projects\Rust\hello_world
 ```
 
-## 常见问题
+## Troubleshooting
 
-### 终端里找不到命令
+### Command not found
 
-先执行：
+Run:
 
 ```powershell
 where.exe cargorise
 ```
 
-如果刚修改 PATH，请重新打开编辑器和终端。
+If you just changed `PATH`, reopen your editor and terminal.
 
-### IDE 没有自动打开
+### IDE does not open automatically
 
-确认以下命令在 PATH 中至少有一个：
+Make sure at least one of these commands is available on `PATH`:
 
 ```powershell
 code
 rustrover
 ```
 
-## 备注
+## Notes
 
-- 这个版本是便携包。
-- 不需要在项目里额外添加 `.json` 配置。
-- `cargorise-new` 是最快路径，`cargorise` 是窗口模式。
-
+- This release is portable.
+- No extra `.json` files are needed inside each project.
+- `cargorise-new` is the fastest creation path, and `cargorise` is the GUI mode.
+- `v0.2.1` uses `assets/CargoRise.ico` as the default GUI and Windows launcher icon.
