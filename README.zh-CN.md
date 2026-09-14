@@ -1,16 +1,32 @@
+<div align="center">
+
+<img src="./assets/logo_dark.png" width="110" height="110" alt="CargoRise Logo" />
+
 # CargoRise
 
-![Windows](https://img.shields.io/badge/platform-Windows-blue)
-![Rust](https://img.shields.io/badge/backend-Rust-orange)
-![Python](https://img.shields.io/badge/gui-Python%20%2B%20Tkinter-yellow)
-![Portable](https://img.shields.io/badge/build-portable-brightgreen)
-![Release](https://img.shields.io/badge/release-v0.2.0-2ea44f)
+### 面向 Windows 的快捷 Rust 项目创建工具
 
-English README: [README.md](README.md)
+**轻量、快速、便携的 Rust 项目启动器**
 
-CargoRise 是一个面向 Windows 的 Rust 项目创建工具，适合 RustRover、VS Code 和终端工作流。它的目标很简单：你写完 `main.rs` 之后，可以更快创建下一个项目，减少切换窗口和输入路径的次数。
+[![版本](https://img.shields.io/badge/Release-v0.2.0-2563EB.svg?style=flat-square&logo=github)](https://github.com/NostalgiaIm/CargoRise/releases)
+[![平台](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D4.svg?style=flat-square&logo=windows)](https://www.microsoft.com/windows)
+[![后端](https://img.shields.io/badge/Backend-Rust-orange.svg?style=flat-square&logo=rust)](https://www.rust-lang.org/)
+[![界面](https://img.shields.io/badge/GUI-Python%20%2B%20Tkinter-F7DF1E.svg?style=flat-square&logo=python)](https://www.python.org/)
+[![许可证](https://img.shields.io/badge/License-MIT-10B981.svg?style=flat-square)](LICENSE)
 
-当前版本：`v0.2.0`
+<br />
+
+**[简体中文](README.zh-CN.md)** • **[English](README.md)**
+
+<br />
+
+</div>
+
+CargoRise 是一个面向 Windows 的轻量工具，用于快速创建 Rust 项目，并在创建后直接用 IDE 打开。
+
+它适合 RustRover、VS Code 以及以终端为主的开发流程。写完一个 `main.rs` 后，可以更快开始下一个项目，减少窗口切换和路径输入。
+
+> 英文 README 是项目的主说明文档，中文版本请查看 [README.zh-CN.md](README.zh-CN.md)。
 
 ## 特性
 
@@ -40,6 +56,8 @@ CargoRise/
   install_windowsapps.cmd
   install_user_path.cmd
   install_powershell_profile.cmd
+  assets/
+    logo_dark.png
   README.zh-CN.md
 ```
 

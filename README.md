@@ -1,18 +1,32 @@
+<div align="center">
+
+<img src="./assets/logo_dark.png" width="110" height="110" alt="CargoRise Logo" />
+
 # CargoRise
 
-![Windows](https://img.shields.io/badge/platform-Windows-blue)
-![Rust](https://img.shields.io/badge/backend-Rust-orange)
-![Python](https://img.shields.io/badge/gui-Python%20%2B%20Tkinter-yellow)
-![Portable](https://img.shields.io/badge/build-portable-brightgreen)
-![Release](https://img.shields.io/badge/release-v0.2.0-2ea44f)
+### Fast Rust project creation for Windows
 
-中文说明: [README.zh-CN.md](README.zh-CN.md)
+**Lightweight, Fast & Portable Rust Project Launcher**
 
-CargoRise is a lightweight Windows tool for creating new Rust projects and opening them in your IDE with less friction.
+[![Release](https://img.shields.io/badge/Release-v0.2.0-2563EB.svg?style=flat-square&logo=github)](https://github.com/NostalgiaIm/CargoRise/releases)
+[![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D4.svg?style=flat-square&logo=windows)](https://www.microsoft.com/windows)
+[![Backend](https://img.shields.io/badge/Backend-Rust-orange.svg?style=flat-square&logo=rust)](https://www.rust-lang.org/)
+[![GUI](https://img.shields.io/badge/GUI-Python%20%2B%20Tkinter-F7DF1E.svg?style=flat-square&logo=python)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-10B981.svg?style=flat-square)](LICENSE)
+
+<br />
+
+**[简体中文](README.zh-CN.md)** • **[English](README.md)**
+
+<br />
+
+</div>
+
+CargoRise is a lightweight Windows tool for creating Rust projects and opening them in your IDE with less friction.
 
 It is designed for RustRover, VS Code, and terminal-first workflows. After you finish a `main.rs`, CargoRise helps you create the next project faster and with fewer window switches.
 
-Current version: `v0.2.0`
+> The English README is the primary project documentation. A Chinese translation is available in [README.zh-CN.md](README.zh-CN.md).
 
 ## Features
 
@@ -42,6 +56,8 @@ CargoRise/
   install_windowsapps.cmd
   install_user_path.cmd
   install_powershell_profile.cmd
+  assets/
+    logo_dark.png
   README.zh-CN.md
 ```
 
