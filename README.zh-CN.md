@@ -8,7 +8,7 @@
 
 **轻量、快速、便携的 Rust 项目启动器**
 
-[![版本](https://img.shields.io/badge/Release-v0.2.0-2563EB.svg?style=flat-square&logo=github)](https://github.com/NostalgiaIm/CargoRise/releases)
+[![版本](https://img.shields.io/badge/Release-v0.2.1-2563EB.svg?style=flat-square&logo=github)](https://github.com/NostalgiaIm/CargoRise/releases)
 [![平台](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D4.svg?style=flat-square&logo=windows)](https://www.microsoft.com/windows)
 [![后端](https://img.shields.io/badge/Backend-Rust-orange.svg?style=flat-square&logo=rust)](https://www.rust-lang.org/)
 [![界面](https://img.shields.io/badge/GUI-Python%20%2B%20Tkinter-F7DF1E.svg?style=flat-square&logo=python)](https://www.python.org/)
@@ -57,6 +57,7 @@ CargoRise/
   install_powershell_profile.cmd
   assets/
     logo_dark.png
+    CargoRise.ico
   README.zh-CN.md
 ```
 
@@ -139,7 +140,7 @@ cargorise
 
 - Windows 10 / 11
 - Python 3
-- 如果要重新编译源码，需要 Rust 工具链
+- 如果要重新编译 Windows 启动器源码，需要 Rust 工具链和 MinGW `windres`
 
 ## 从源码构建
 
@@ -157,3 +158,4 @@ cargo_rise_core.exe
 ## 版本说明
 
 - `v0.2.0`：新增 `cargorise-open`，支持 GUI 创建后直接打开 IDE，并改为更快的项目骨架生成方式。
+- `v0.2.1`：新增 CargoRise 默认图标，窗口模式会使用该图标，同时将图标嵌入 Windows 启动器可执行文件。Rust 构建脚本现在会自动完成图标资源嵌入。

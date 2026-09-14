@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "cargo_rise_core"
+name = "cargorise_launcher"
 version = "0.2.1"

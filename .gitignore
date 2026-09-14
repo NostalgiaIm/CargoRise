@@ -1,0 +1,13 @@
+# Rust build output
+target/
+
+# Generated Windows resource object
+launcher/CargoRise.res
+
+# Python bytecode and local tooling files
+__pycache__/
+.pytest_cache/
+
+# IDE metadata
+.idea/
+.vscode/

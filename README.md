@@ -8,7 +8,7 @@
 
 **Lightweight, Fast & Portable Rust Project Launcher**
 
-[![Release](https://img.shields.io/badge/Release-v0.2.0-2563EB.svg?style=flat-square&logo=github)](https://github.com/NostalgiaIm/CargoRise/releases)
+[![Release](https://img.shields.io/badge/Release-v0.2.1-2563EB.svg?style=flat-square&logo=github)](https://github.com/NostalgiaIm/CargoRise/releases)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D4.svg?style=flat-square&logo=windows)](https://www.microsoft.com/windows)
 [![Backend](https://img.shields.io/badge/Backend-Rust-orange.svg?style=flat-square&logo=rust)](https://www.rust-lang.org/)
 [![GUI](https://img.shields.io/badge/GUI-Python%20%2B%20Tkinter-F7DF1E.svg?style=flat-square&logo=python)](https://www.python.org/)
@@ -57,6 +57,7 @@ CargoRise/
   install_powershell_profile.cmd
   assets/
     logo_dark.png
+    CargoRise.ico
   README.zh-CN.md
 ```
 
@@ -139,7 +140,7 @@ cargorise
 
 - Windows 10 / 11
 - Python 3
-- Rust toolchain only if you want to rebuild from source
+- Rust toolchain and MinGW `windres` only if you want to rebuild the Windows launcher from source
 
 ## Build From Source
 
@@ -157,3 +158,4 @@ cargo_rise_core.exe
 ## Release Notes
 
 - `v0.2.0`: Added `cargorise-open`, optional IDE launch after GUI creation, and a faster direct project skeleton generator.
+- `v0.2.1`: Added the CargoRise project icon to the GUI window and embedded it into the Windows launcher executable. The Rust build script now handles icon embedding automatically.
