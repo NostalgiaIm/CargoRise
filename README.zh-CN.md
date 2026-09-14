@@ -12,7 +12,6 @@
 [![平台](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D4.svg?style=flat-square&logo=windows)](https://www.microsoft.com/windows)
 [![后端](https://img.shields.io/badge/Backend-Rust-orange.svg?style=flat-square&logo=rust)](https://www.rust-lang.org/)
 [![界面](https://img.shields.io/badge/GUI-Python%20%2B%20Tkinter-F7DF1E.svg?style=flat-square&logo=python)](https://www.python.org/)
-[![许可证](https://img.shields.io/badge/License-MIT-10B981.svg?style=flat-square)](LICENSE)
 
 <br />
 
