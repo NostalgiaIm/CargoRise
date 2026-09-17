@@ -11,8 +11,15 @@ from tkinter import filedialog, messagebox, ttk
 
 
 APP_NAME = "CargoRise"
+APP_USER_MODEL_ID = "NostalgiaIm.CargoRise.App"
 APP_DIR = Path(__file__).resolve().parent
 ICON_FILE = APP_DIR / "assets" / "CargoRise.ico"
+ICON_PHOTO_FILES = [
+    APP_DIR / "assets" / "app_icon_16.png",
+    APP_DIR / "assets" / "app_icon_32.png",
+    APP_DIR / "assets" / "app_icon_48.png",
+    APP_DIR / "assets" / "app_icon_256.png",
+]
 CONFIG_DIR = Path(os.environ.get("APPDATA", Path.home())) / APP_NAME
 CONFIG_FILE = CONFIG_DIR / "config.json"
 BACKEND_MANIFEST = APP_DIR / "backend" / "Cargo.toml"
@@ -122,6 +129,20 @@ def hidden_subprocess_options() -> dict:
     return {}
 
 
+def set_windows_app_user_model_id() -> None:
+    """设置 Windows 应用 ID，让任务栏优先使用 CargoRise 自己的图标分组。"""
+    if os.name != "nt":
+        return
+
+    try:
+        import ctypes
+
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(APP_USER_MODEL_ID)
+    except (AttributeError, OSError):
+        # 图标分组失败不影响窗口本身运行。
+        pass
+
+
 class CargoRiseApp(tk.Tk):
     def __init__(self, main_file: Optional[Path], caller_dir: Path):
         super().__init__()
@@ -149,13 +170,24 @@ class CargoRiseApp(tk.Tk):
 
     def _set_window_icon(self) -> None:
         """加载项目图标，让窗口标题栏和任务栏使用 CargoRise 图标。"""
-        if not ICON_FILE.exists():
-            return
+        self.icon_images: List[tk.PhotoImage] = []
+
         try:
-            self.iconbitmap(default=str(ICON_FILE))
+            for icon_path in ICON_PHOTO_FILES:
+                if icon_path.exists():
+                    self.icon_images.append(tk.PhotoImage(file=str(icon_path)))
+            if self.icon_images:
+                self.iconphoto(True, *self.icon_images)
         except tk.TclError:
-            # 某些 Tk 环境不支持 ICO 时，仍然保留正常的窗口功能。
+            # 某些 Tk 环境不支持 PNG 图标时，继续尝试 ICO。
             pass
+
+        if ICON_FILE.exists():
+            try:
+                self.iconbitmap(default=str(ICON_FILE))
+            except tk.TclError:
+                # 某些 Tk 环境不支持 ICO 时，仍然保留正常的窗口功能。
+                pass
 
     def _build_ui(self) -> None:
         """创建窗口中的输入框、按钮和状态提示。"""
@@ -311,6 +343,7 @@ def main() -> None:
     caller_dir = caller_directory()
     explicit_main_file = Path(args.main_file).resolve() if args.main_file else None
     main_file = discover_main_file(explicit_main_file, caller_dir)
+    set_windows_app_user_model_id()
     app = CargoRiseApp(main_file, caller_dir)
     app.mainloop()
 

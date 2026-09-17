@@ -3,6 +3,11 @@ setlocal
 set "SCRIPT_DIR=%~dp0"
 set "CARGORISE_CALLER_CWD=%CD%"
 
+if exist "%SCRIPT_DIR%cargorise.exe" (
+    start "" "%SCRIPT_DIR%cargorise.exe" %*
+    exit /b 0
+)
+
 where pythonw >nul 2>nul
 if %ERRORLEVEL%==0 (
     start "" pythonw "%SCRIPT_DIR%CargoRise.pyw" %*
