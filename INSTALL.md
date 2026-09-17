@@ -74,5 +74,6 @@ rustrover
 - This release is portable.
 - No extra `.json` files are needed inside each project.
 - `cargorise-new` is the fastest creation path, and `cargorise` is the GUI mode.
+- `v0.2.3` makes the `cargorise` command prefer the Rust launcher, so Windows can use the embedded CargoRise icon more reliably.
 - `v0.2.2` puts the latest portable CargoRise folder first in the user `PATH`, so editors do not keep launching older copies after reinstalling.
 - `v0.2.1` uses `assets/CargoRise.ico` as the default GUI and Windows launcher icon.

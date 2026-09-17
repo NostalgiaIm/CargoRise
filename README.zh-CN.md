@@ -8,7 +8,7 @@
 
 **轻量、快速、便携的 Rust 项目启动器**
 
-[![版本](https://img.shields.io/badge/Release-v0.2.2-2563EB.svg?style=flat-square&logo=github)](https://github.com/NostalgiaIm/CargoRise/releases)
+[![版本](https://img.shields.io/badge/Release-v0.2.3-2563EB.svg?style=flat-square&logo=github)](https://github.com/NostalgiaIm/CargoRise/releases)
 [![平台](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D4.svg?style=flat-square&logo=windows)](https://www.microsoft.com/windows)
 [![后端](https://img.shields.io/badge/Backend-Rust-orange.svg?style=flat-square&logo=rust)](https://www.rust-lang.org/)
 [![界面](https://img.shields.io/badge/GUI-Python%20%2B%20Tkinter-F7DF1E.svg?style=flat-square&logo=python)](https://www.python.org/)
@@ -57,6 +57,8 @@ CargoRise/
   install_powershell_profile.cmd
   assets/
     logo_dark.png
+    app_icon.png
+    app_icon_*.png
     CargoRise.ico
   README.zh-CN.md
 ```
@@ -158,6 +160,7 @@ cargo_rise_core.exe
 
 ## 版本说明
 
+- `v0.2.3`：优化 Windows 任务栏和窗口标题栏图标路径。`cargorise` 命令现在优先使用 Rust 启动器，GUI 会加载清理后的多尺寸图标资源，小尺寸图标更清晰。
 - `v0.2.2`：更新安装逻辑，把最新版 portable CargoRise 文件夹放到用户 `PATH` 最前面，避免 RustRover、VS Code 或 WindowsApps 继续命中旧版转发脚本。
 - `v0.2.1`：新增 CargoRise 默认图标，窗口模式会使用该图标，同时将图标嵌入 Windows 启动器可执行文件。Rust 构建脚本现在会自动完成图标资源嵌入。
 - `v0.2.0`：新增 `cargorise-open`，支持 GUI 创建后直接打开 IDE，并改为更快的项目骨架生成方式。
