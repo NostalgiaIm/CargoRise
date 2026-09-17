@@ -8,7 +8,7 @@
 
 **轻量、快速、便携的 Rust 项目启动器**
 
-[![版本](https://img.shields.io/badge/Release-v0.2.1-2563EB.svg?style=flat-square&logo=github)](https://github.com/NostalgiaIm/CargoRise/releases)
+[![版本](https://img.shields.io/badge/Release-v0.2.2-2563EB.svg?style=flat-square&logo=github)](https://github.com/NostalgiaIm/CargoRise/releases)
 [![平台](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D4.svg?style=flat-square&logo=windows)](https://www.microsoft.com/windows)
 [![后端](https://img.shields.io/badge/Backend-Rust-orange.svg?style=flat-square&logo=rust)](https://www.rust-lang.org/)
 [![界面](https://img.shields.io/badge/GUI-Python%20%2B%20Tkinter-F7DF1E.svg?style=flat-square&logo=python)](https://www.python.org/)
@@ -106,13 +106,13 @@ cargorise
 推荐直接运行：
 
 ```powershell
-.\install_windowsapps.cmd
+.\install_user_path.cmd
 ```
 
-如果你想加入用户 `PATH`：
+旧版 WindowsApps 安装脚本会作为兼容入口保留，现在也会使用同样的 PATH 优先安装方式：
 
 ```powershell
-.\install_user_path.cmd
+.\install_windowsapps.cmd
 ```
 
 如果你习惯 PowerShell Profile：
@@ -135,6 +135,7 @@ cargorise
 - `cargorise-open` 用于创建后直接打开项目。
 - RustRover 和 VS Code 通常不需要每个项目都额外配置 `.json`。
 - 如果 IDE 没有识别到，请确认 `rustrover` 或 `code` 已经在 `PATH` 中。
+- 如果编辑器仍然启动旧版 CargoRise，请在最新版 CargoRise 文件夹里重新运行 `install_user_path.cmd`，然后完全退出并重新打开编辑器，让它重新读取最新的 `PATH`。
 
 ## 运行要求
 
@@ -157,5 +158,6 @@ cargo_rise_core.exe
 
 ## 版本说明
 
-- `v0.2.0`：新增 `cargorise-open`，支持 GUI 创建后直接打开 IDE，并改为更快的项目骨架生成方式。
+- `v0.2.2`：更新安装逻辑，把最新版 portable CargoRise 文件夹放到用户 `PATH` 最前面，避免 RustRover、VS Code 或 WindowsApps 继续命中旧版转发脚本。
 - `v0.2.1`：新增 CargoRise 默认图标，窗口模式会使用该图标，同时将图标嵌入 Windows 启动器可执行文件。Rust 构建脚本现在会自动完成图标资源嵌入。
+- `v0.2.0`：新增 `cargorise-open`，支持 GUI 创建后直接打开 IDE，并改为更快的项目骨架生成方式。

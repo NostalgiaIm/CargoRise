@@ -8,7 +8,7 @@
 
 **Lightweight, Fast & Portable Rust Project Launcher**
 
-[![Release](https://img.shields.io/badge/Release-v0.2.1-2563EB.svg?style=flat-square&logo=github)](https://github.com/NostalgiaIm/CargoRise/releases)
+[![Release](https://img.shields.io/badge/Release-v0.2.2-2563EB.svg?style=flat-square&logo=github)](https://github.com/NostalgiaIm/CargoRise/releases)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D4.svg?style=flat-square&logo=windows)](https://www.microsoft.com/windows)
 [![Backend](https://img.shields.io/badge/Backend-Rust-orange.svg?style=flat-square&logo=rust)](https://www.rust-lang.org/)
 [![GUI](https://img.shields.io/badge/GUI-Python%20%2B%20Tkinter-F7DF1E.svg?style=flat-square&logo=python)](https://www.python.org/)
@@ -106,13 +106,13 @@ The window lets you enter:
 Recommended quick setup:
 
 ```powershell
-.\install_windowsapps.cmd
+.\install_user_path.cmd
 ```
 
-If you prefer user PATH installation:
+The legacy WindowsApps installer is kept as a compatibility wrapper and now uses the same PATH-first installation:
 
 ```powershell
-.\install_user_path.cmd
+.\install_windowsapps.cmd
 ```
 
 If you use a PowerShell profile:
@@ -135,6 +135,7 @@ cargorise
 - `cargorise-open` opens a project and can launch the IDE immediately.
 - RustRover and VS Code usually do not need extra `.json` files in each project.
 - If an IDE is not detected, make sure `rustrover` or `code` is available on `PATH`.
+- If an editor still launches an older CargoRise copy, run `install_user_path.cmd` from the latest CargoRise folder, then fully restart the editor so it reloads the updated `PATH`.
 
 ## Requirements
 
@@ -157,5 +158,6 @@ cargo_rise_core.exe
 
 ## Release Notes
 
-- `v0.2.0`: Added `cargorise-open`, optional IDE launch after GUI creation, and a faster direct project skeleton generator.
+- `v0.2.2`: Updated installation so the latest portable CargoRise folder is placed first in the user `PATH`, avoiding stale RustRover, VS Code, and WindowsApps command shims.
 - `v0.2.1`: Added the CargoRise project icon to the GUI window and embedded it into the Windows launcher executable. The Rust build script now handles icon embedding automatically.
+- `v0.2.0`: Added `cargorise-open`, optional IDE launch after GUI creation, and a faster direct project skeleton generator.
